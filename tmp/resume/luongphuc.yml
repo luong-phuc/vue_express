@@ -1,0 +1,97 @@
+/* #*/ export const PERSON = `
+name:
+  first: Phuc
+  middle: Ngoc Minh
+  last: Luong
+about: Hi, my name is Luong Ngoc Minh Phuc.
+position: Web Developer
+
+birth:
+  year: 1986
+  location: Ho Chi Minh city
+
+experience:
+- company: Mulodo VietNam Co,. LTD
+  position: Leader
+  timeperiod: 03/2012 - 04/2020
+  description:
+    - Manage progressing of project
+    - Manage progressing of project
+    - Create Plan, daily report
+    - Communication with Customer
+    - Review and implement project
+    - Building Server
+  website: http://www.mulodo.com.vn/
+
+- company: Company B
+  position: Frontend Developer
+  timeperiod: January 2015 - December 2015
+  description: Fulfillment of extremely important tasks.
+
+- company: Company C
+  position: Trainee
+  timeperiod: March 2014 - December 2014
+  description: Making coffee and baking cookies.
+
+education:
+- degree: Master of Arts
+  timeperiod: March 2012 - December 2013
+  description: Major in Hacking and Computer Penetration, University A, New York, USA.
+  website: https://example.com
+
+- degree: Bachelor of Science
+  timeperiod: March 2009 - December 2011
+  description: Major in Engineering, University B, Los Angeles, USA.
+
+# skill level goes 0 to 100
+skills:
+- name: HTML5
+  level: 99
+- name: CSS3
+  level: 95
+- name: JavaScript
+  level: 97
+- name: Node.js
+  level: 93
+- name: Angular 2
+  level: 60
+- name: TypeScript
+  level: 80
+- name: ES.Next
+  level: 70
+- name: Docker
+  level: 99
+knowledge: Also proficient in Adobe Photoshop and Illustrator, grew up bilingual
+  (English and Klingon).
+
+projects:
+- name: best-resume-ever
+  platform: Vue
+  timeperiod: February 2016
+  description: 👔 💼 Build fast 🚀 and easy multiple beautiful resumes and create your best CV ever! Made with Vue and LESS.
+  url: https://github.com/salomonelli/best-resume-ever
+
+hobbies:
+- name: Video Games
+  iconClass: fa fa-gamepad
+  url: https://example.com
+
+- name: Drawing
+  iconClass: fa fa-pencil
+  url: https://example.com
+
+contributions:
+- name: best-resume-ever
+  description: 👔 💼 Build fast 🚀 and easy multiple beautiful resumes.
+  url: https://github.com/salomonelli/best-resume-ever
+
+contact:
+  email: john.doe@email.com
+  phone: 0123 456789
+  street: 1234 Broadway
+  city: New York
+  website: johndoe.com
+  github: johnyD
+# en, de, fr, pt, ca, cn, it, es, th, pt-br, ru, sv, id, hu, pl, ja, ka, nl, he, zh-tw, lt, ko, el, nb-no
+lang: en
+`

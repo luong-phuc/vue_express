@@ -1,0 +1,12 @@
+version: '3'
+services:
+  vuejs:
+    build: .
+    container_name: vuejs
+    ports:
+      - "8080:8080"
+    command: tail -f /project/log
+    volumes:
+      - .:/project
+    environment:
+      - PORT=8080
