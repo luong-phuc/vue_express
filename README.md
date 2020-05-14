@@ -3,9 +3,9 @@
 npm install -g @vue/cli @vue/cli-service-global
 ```
 
-### Tạo project : 
+### Tạo project :
 
-https://vi.vuejs.org/v2/guide/installation.html#CLI  
+https://vi.vuejs.org/v2/guide/installation.html#CLI
 
 ```
 npm install -g @vue/cli-init
