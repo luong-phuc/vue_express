@@ -23,4 +23,7 @@ npm install express cors body-parser ejs morgan
 npm install -g @vue/cli
 npm install -g @vue/cli-init
 vue init webpack client
+
+npm install --save-dev bootstrap jquery popper.js
+
 ```
