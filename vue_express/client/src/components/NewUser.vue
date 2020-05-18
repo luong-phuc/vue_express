@@ -17,7 +17,7 @@
           <label for="inputPassword">Password</label>
           <input type="password" class="form-control" id="inputPassword" placeholder="Password" v-model="password" name="password">
         </div>
-        <button type="button" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-primary" v-on:click="createUser">Submit</button>
     </form>
 
     <pre>
@@ -31,19 +31,23 @@
 
 <script>
 import BreadCrumb from '@/components/BreadCrumb'
+import User from '../models/user'
 
 export default {
   name: 'NewUser',
   data () {
     return {
-      title: ["Home", "Create User"],
+      title: ["Users", "Create"],
       fullName: null,
       email: null,
       password: null
     }
   },
   methods: {
-
+    createUser: function() {
+      let user = new User(null, this.fullName, this.email, this.password)
+      console.log(user)
+    }
   },
   computed: {
 

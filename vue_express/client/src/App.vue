@@ -9,15 +9,15 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <router-link to="/" class="nav-item nav-link active">Home</router-link>
+          <router-link to="/user" class="nav-item nav-link active">User List</router-link>
           <router-link to="/new-user" class="nav-item nav-link active">New User</router-link>
-          <router-link :to="{ name: 'EditUser', params: { email: 'luong.phuc@mulodo.com' }}" class="nav-item nav-link active">Edit User</router-link>
           <router-link to="/about" class="nav-item nav-link active">About</router-link>
         </div>
       </div>
 
       <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" >Search</button>
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" v-model='s'>
+        <button class="btn btn-secondary my-2 my-sm-0" v-on:click="search()" >Search</button>
       </form>
     </nav>
 
@@ -32,7 +32,17 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  data () {
+    return {
+      s: ""
+    }
+  },
+  methods: {
+    search: function() {
+      this.$router.push({ name: 'UserList', query: { s: this.s } })
+    }
+  }
 }
 </script>
 
