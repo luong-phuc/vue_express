@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import About from '@/components/About'
 import NewUser from '@/components/NewUser'
+import EditUser from '@/components/EditUser'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/new-user',
       name: 'NewUser',
       component: NewUser
+    },
+    {
+      path: '/user/:email',
+      name: 'EditUser',
+      component: EditUser
     }
   ]
 })

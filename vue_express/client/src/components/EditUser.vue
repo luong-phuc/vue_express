@@ -1,5 +1,5 @@
 <template>
-  <div class="new-user">
+  <div class="edit-user">
       <bread-crumb v-bind:title='title'></bread-crumb>
 
       <form>
@@ -33,10 +33,10 @@
 import BreadCrumb from '@/components/BreadCrumb'
 
 export default {
-  name: 'NewUser',
+  name: 'EditUser',
   data () {
     return {
-      title: ["Home", "Create User"],
+      title: ["Home", "Edit User"],
       fullName: null,
       email: null,
       password: null
@@ -52,7 +52,10 @@ export default {
 
   },
   created: function () {
-
+    if(this.$route.params.email == 'luong.phuc@mulodo.com') {
+      this.fullName = "luong-phuc-mulodo"
+      this.email = "luong.phuc@mulodo.com"
+    }
   },
   components: {
     'BreadCrumb': BreadCrumb
@@ -62,7 +65,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.new-user {
+.edit-user {
 
 }
 </style>
