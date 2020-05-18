@@ -10,6 +10,7 @@
         <div class="navbar-nav">
           <router-link to="/" class="nav-item nav-link active">Home</router-link>
           <router-link to="/new-user" class="nav-item nav-link active">New User</router-link>
+          <router-link :to="{ name: 'EditUser', params: { email: 'luong.phuc@mulodo.com' }}" class="nav-item nav-link active">Edit User</router-link>
           <router-link to="/about" class="nav-item nav-link active">About</router-link>
         </div>
       </div>

@@ -15,6 +15,8 @@ export default {
       msg: 'About'
     }
   },
+  computed: {
+  },
   components: {
     'BreadCrumb': BreadCrumb
   }
