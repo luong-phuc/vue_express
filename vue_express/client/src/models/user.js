@@ -1,23 +1,15 @@
 class User {
     constructor(data) {
-        // if(!data) {
-        //     return
-        // }
+        if(!data) {
+            return
+        }
 
-        // let params = ['id','fullName', 'email', 'password']
+        let params = ["id","fullName", "email", "password"]
+        const obj = this
 
-        // params.forEach(function(property) {
-        //     console.log(data[property])
-
-        //     if(data[property]) {
-        //         this[property] = data[property]
-        //     }
-        // })
-
-        this['id'] = data['id']
-        this['fullName'] = data['fullName']
-        this['email'] = data['email']
-        this['password'] = data['password']
+        params.forEach(function(property) {
+            obj[property] = data[property] || null
+        })
     }
 }
 

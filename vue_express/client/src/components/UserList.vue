@@ -15,7 +15,7 @@
         <tr v-for="user in users">
           <th scope="row">{{ user.id }}</th>
           <td>{{ user.fullName }}</td>
-          <td>{{ user.email }}</td>
+          <td>{{ user.email || 'N/a' }}</td>
           <td>
             <router-link :to="{ name: 'EditUser', params: { id: user.id }}" class="nav-item nav-link active">Edit</router-link>
           </td>
@@ -27,7 +27,7 @@
 
 <script>
 import BreadCrumb from '@/components/BreadCrumb'
-import User from '../models/user'
+import UserService from '../services/UserService'
 
 export default {
   name: 'UserList',
@@ -38,31 +38,8 @@ export default {
   },
   computed: {
     users: function() {
-      let users = []
       let search = this.$route.query.s
-
-      if(!search || search == 'Phuc') {
-        users.push(new User({
-          id: "001",
-          fullName: "Luong Phuc",
-          email: "luong.phuc@mulodo.com",
-          password: null
-        }))
-      }
-
-      if(!search || search == 'Vinh') {
-        users.push(new User({
-            id: "002",
-            fullName: "Luong Vinh",
-            email: "luong.vinh@mulodo.com",
-            password: null
-        }))
-      }
-
-      let emptyUser = new User({})
-      console.log(emptyUser)
-
-      return users
+      return UserService.getUserList(search)
     }
   },
   components: {
