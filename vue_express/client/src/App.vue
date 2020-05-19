@@ -40,7 +40,7 @@ export default {
   },
   methods: {
     search: function() {
-      this.$router.push({ name: 'UserList', query: { s: this.s } })
+      this.$router.push({ name: 'UserList', query: { s: this.s } }).catch(err => {})
     }
   }
 }

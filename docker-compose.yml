@@ -5,8 +5,10 @@ services:
     container_name: vuejs
     ports:
       - "8080:8080"
+      - "5000:5000"
     command: tail -f /project/log
     volumes:
       - .:/project
     environment:
       - PORT=8080
+      - HOST=0.0.0.0

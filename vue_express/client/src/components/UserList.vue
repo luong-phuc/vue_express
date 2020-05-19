@@ -11,7 +11,7 @@
           <th scope="col">Handle</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody v-if="searchUser">
         <tr v-for="user in users" v-bind:key="user.id">
           <th scope="row">{{ user.id }}</th>
           <td>{{ user.fullName }}</td>
@@ -33,14 +33,26 @@ export default {
   name: 'UserList',
   data () {
     return {
-      title: ["Users"]
+      title: ["Users"],
+      users: []
     }
   },
   computed: {
-    users: function() {
+    searchUser: function() {
       let search = this.$route.query.s
-      return UserService.getUserList(search)
-    }
+
+      let data = []
+      UserService.getUserList(search)
+      .then(response => this.users = response.data )
+      .catch(error => {
+        if(error.response || error.response.status) {
+          console.log("Response error code : " + error.response.status)
+        }
+        this.users = []
+      })
+
+      return true
+    }  
   },
   components: {
     'BreadCrumb': BreadCrumb

@@ -1,3 +1,4 @@
+import Vue from 'vue'
 import User from "../models/user"
 
 class UserService {
@@ -33,24 +34,20 @@ class UserService {
     return users
   }
 
-  static getUserList(search){
-    let users = this.users()
+  static async getUserList(search) {
+    let url = Vue.config.HOST_API + '/api/user'
 
-    if(!search) {
-      return users
+    if(search) {
+      url = url + '?s=' + encodeURI(search)
     }
-
-    return _.filter(users, {fullName: search});
+    
+    return await Vue.axios.get(url)
   }
 
-  static getUserById(id) {
-    let users = this.users()
-
-    if(!id) {
-      return new User()
-    }
-
-    return _.find(users, (u) => u.id == id);
+  static async getUserById(id) {
+    let url = Vue.config.HOST_API + '/api/user/' + encodeURI(id)
+    
+    return await Vue.axios.get(url)
   }
 
   static createUser(user) {

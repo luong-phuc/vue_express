@@ -2,7 +2,7 @@
   <div class="edit-user">
       <bread-crumb v-bind:title='title'></bread-crumb>
 
-      <form>
+      <form v-if="getUserById">
         <div class="form-group">
           <label for="inputFullName">Full Name</label>
           <input type="text" class="form-control" id="inputFullName" aria-describedby="fullNameHelp" placeholder="Enter full name" v-model="user.fullName" name="fullName">
@@ -40,7 +40,7 @@ export default {
   data () {
     return {
       title: ["Users", "Edit"],
-      user: UserService.getUserById(this.$route.params.id)
+      user: {}
     }
   },
   methods: {
@@ -49,13 +49,21 @@ export default {
     }
   },
   computed: {
+    getUserById: function() {
+      let id = this.$route.params.id
 
-  },
-  watch: {
+      let data = []
+      UserService.getUserById(id)
+      .then(response => this.user = new User(response.data))
+      .catch(error => {
+        if(error.response || error.response.status) {
+          console.log("Response error code : " + error.response.status)
+        }
+        this.user = new User({})
+      })
 
-  },
-  created: function () {
-
+      return true
+    }
   },
   components: {
     'BreadCrumb': BreadCrumb
