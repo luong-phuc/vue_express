@@ -12,7 +12,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="user in users">
+        <tr v-for="user in users" v-bind:key="user.id">
           <th scope="row">{{ user.id }}</th>
           <td>{{ user.fullName }}</td>
           <td>{{ user.email || 'N/a' }}</td>
@@ -50,5 +50,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 </style>

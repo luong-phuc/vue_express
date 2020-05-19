@@ -1,7 +1,7 @@
 <template>
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb" v-if="isArray">
-      <li v-for="item in title" class="breadcrumb-item" aria-current="page">{{item}}</li>
+      <li v-for="item in title" v-bind:key="item" class="breadcrumb-item" aria-current="page">{{item}}</li>
     </ol>
     <ol class="breadcrumb" v-else>
       <li class="breadcrumb-item active" aria-current="page">{{title}}</li>
